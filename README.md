@@ -63,6 +63,8 @@ Business-focused SQL queries are used to analyze:
 
 ## 📂 Project Structure
 
+''text
+
 shopify-ecommerce-analytics-sql/
 │
 ├── data/
@@ -75,7 +77,7 @@ shopify-ecommerce-analytics-sql/
     ├── staging_tables.sql
     ├── clean_tables.sql
     ├── transformations.sql
-    └── analysis_queries.sql
+    └── analysis_queries.sql'
 
 ⚙️ Technologies Used
 SQL Server
