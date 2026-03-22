@@ -17,7 +17,7 @@ Analyze e-commerce data to uncover:
 ---
 
 ## 📂 Project Structure
-
+```text
 shopify-ecommerce-analytics-sql/
 │
 ├── data/
@@ -31,7 +31,7 @@ shopify-ecommerce-analytics-sql/
     ├── clean_tables.sql
     ├── transformations.sql
     └── analysis_queries.sql
-
+```
 ---
 
 ## ⚙️ Technologies Used
