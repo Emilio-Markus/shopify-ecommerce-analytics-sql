@@ -76,7 +76,8 @@ shopify-ecommerce-analytics-sql/
     ├── staging_tables.sql
     ├── clean_tables.sql
     ├── transformations.sql
-    └── analysis_queries.sql'''
+    └── analysis_queries.sql
+text```
 
 ⚙️ Technologies Used
 SQL Server
