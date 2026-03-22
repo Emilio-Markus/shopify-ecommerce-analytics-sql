@@ -84,7 +84,7 @@ Total Customers: 7
 Average Order Value (AOV): $209
 ### 📈 Revenue Trend
 
-```sql
+'''sql
 SELECT 
     FORMAT(order_date, 'yyyy-MM') AS month,
     SUM(net_sales) AS total_revenue,
