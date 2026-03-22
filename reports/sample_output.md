@@ -26,12 +26,14 @@ The goal is to identify key revenue drivers and opportunities for growth.
 
 ### Insight
 
-Revenue decreased significantly from January to February.
+Revenue decreased significantly from January ($1,550) to February ($540), representing a ~65% decline.
 
-This may indicate:
-- Seasonal demand changes  
-- Reduced customer activity  
-- Marketing or pricing impact  
+This suggests:
+- Possible seasonality or demand drop-off  
+- Reduced customer engagement  
+- Potential gaps in marketing or promotions  
+
+👉 This highlights the importance of monitoring monthly trends to quickly identify performance declines and take corrective action. 
 
 ---
 
