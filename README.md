@@ -2,13 +2,13 @@
 
 ## 📌 Project Overview
 
-This project demonstrates a full end-to-end data analytics pipeline using SQL Server, transforming raw e-commerce data into actionable business insights.
+This project demonstrates a full end-to-end SQL Server analytics workflow, transforming raw e-commerce transaction data into business-ready insights.
 
-The solution follows a structured approach:
-- Data ingestion (staging tables)
-- Data transformation (fact & dimension tables)
-- Business analysis (SQL queries)
-- Insight reporting (Markdown reports)
+The project covers:
+- Data ingestion into staging tables
+- Data transformation into fact and dimension tables
+- Analysis of revenue, products, customers, and trends
+- Reporting of findings in a clean business format
 
 ---
 
@@ -25,81 +25,77 @@ The goal of this project is to analyze e-commerce transaction data to uncover:
 
 ## 🏗️ Data Architecture
 
-The project is structured into three main layers:
+The project is structured into three layers:
 
 ### 1. Staging Layer
-- Raw data imported into flexible staging tables
-- Stored as `NVARCHAR` for easy ingestion
+Raw data is loaded into flexible staging tables:
+- `stg_order_items`
+- `stg_customers`
+- `stg_products`
 
 ### 2. Transformation Layer
-- Cleaned and structured into:
-  - `fact_order_items`
-  - `dim_customers`
-  - `dim_products`
+Raw data is cleaned and transformed into analysis-ready tables:
+- `fact_order_items`
+- `dim_customers`
+- `dim_products`
 
 ### 3. Analytics Layer
-- SQL queries used to generate business insights
-- Metrics and performance analysis
+Business-focused SQL queries are used to analyze:
+- Revenue performance
+- Monthly sales trends
+- Product performance
+- Customer behavior
+- Geographic performance
+- Discount usage
 
 ---
 
 ## 📂 Project Structure
 
-
-📁 sql/
-├── staging_tables.sql
-├── clean_tables.sql
-├── transformations.sql
-└── analysis_queries.sql
-
-📁 reports/
-└── sample_output.md
-
-
----
-
-## ⚙️ Technologies Used
-
-- SQL Server (SSMS)
-- T-SQL
-- Data Modeling (Star Schema)
-- GitHub (Version Control)
-
----
-
-## 🔄 Data Pipeline
-
-1. Load raw CSV data into staging tables
-2. Clean and structure data into fact and dimension tables
-3. Transform data into analysis-ready format
-4. Run analytical queries to generate insights
-5. Document results in reports
-
----
-
-## 📊 Project Results
-
-### Key Metrics
-
-- **Total Revenue:** $2,090  
-- **Total Orders:** 10  
-- **Total Customers:** 7  
-- **Average Order Value (AOV):** $209  
-
----
-
-### 📈 Revenue Trend
-
-```sql
+```text
+shopify-ecommerce-analytics-sql/
+│
+├── data/
+│   └── sample_ecommerce_data.csv
+│
+├── reports/
+│   └── sample_output.md
+│
+└── sql/
+    ├── staging_tables.sql
+    ├── clean_tables.sql
+    ├── transformations.sql
+    └── analysis_queries.sql
+⚙️ Technologies Used
+SQL Server
+T-SQL
+SQL Server Management Studio (SSMS)
+GitHub
+🔄 Data Pipeline
+Load raw CSV data into staging tables
+Transform raw data into fact and dimension tables
+Run SQL analysis queries
+Summarize results in a business-style report
+📊 Project Results
+Key Metrics
+Total Revenue: $2,090
+Total Orders: 10
+Total Customers: 7
+Average Order Value (AOV): $209
+📈 Revenue Trend
 SELECT 
     FORMAT(order_date, 'yyyy-MM') AS month,
-    SUM(net_sales) AS revenue
+    SUM(net_sales) AS total_revenue,
+    COUNT(DISTINCT order_id) AS total_orders
 FROM dbo.fact_order_items
 GROUP BY FORMAT(order_date, 'yyyy-MM')
 ORDER BY month;
+Month	Revenue	Orders
+2024-01	$1,460	7
+2024-02	$630	3
 
 Insight:
-Revenue is concentrated in early months, indicating potential to scale growth through consistent marketing and retention strategies.
+Revenue is stronger in January than February in the sample dataset, showing the value of time-based trend analysis for identifying slowdowns and planning campaigns.
 
 🛒 Top Performing Products
 Product	Revenue
@@ -114,45 +110,48 @@ Repeat Customers: 2
 One-Time Customers: 5
 📈 Key Takeaways
 💰 Revenue is concentrated in a small number of products
-🔁 Repeat customers contribute strong value but are limited
+🔁 Repeat customers contribute meaningful value despite being fewer in number
 🪑 Furniture is the highest-performing category
-📦 Opportunity exists to increase AOV through bundling
+📦 There is an opportunity to increase basket size through product bundling
+📉 Monthly revenue tracking helps identify periods of weaker performance
 🚀 Strategic Recommendations
 1. Focus on High-Revenue Products
 
-Office Chairs and Modern Lamps should be prioritized in marketing campaigns.
+Office Chairs and Modern Lamps should be prioritized in marketing and promotional campaigns.
 
 2. Increase Customer Retention
-Implement email marketing
-Introduce loyalty programs
+
+Introduce email marketing, remarketing, and loyalty incentives to encourage repeat purchases.
+
 3. Improve Product Bundling
 
-Bundle complementary products to increase order value.
+Bundle complementary items to increase average order value.
 
 4. Optimize Pricing Strategy
 
-Test reduced discounting to improve profit margins.
+Test lower discount dependency on strong products to protect margins.
 
 5. Expand Winning Categories
 
-Focus on scaling Furniture and Lighting product lines.
+Furniture and Lighting appear strongest and may deserve more inventory and promotional focus.
 
 📎 Full Report
 
-Detailed analysis available here:
-👉 /reports/sample_output.md
+Detailed analysis is available here:
+/reports/sample_output.md
 
 💡 What This Project Demonstrates
-Ability to build a data pipeline from raw data to insights
-Strong SQL skills (joins, aggregations, transformations)
-Business thinking and analytical reasoning
-Ability to communicate insights clearly
+Ability to build a full SQL analytics workflow
+Strong SQL skills in aggregation, transformation, and business analysis
+Understanding of fact/dimension data modeling
+Ability to communicate findings clearly and professionally
 🚀 Future Improvements
-Add Power BI dashboard
-Automate data pipeline (ETL scheduling)
-Expand dataset for deeper analysis
-Introduce cohort analysis for retention
+Add a Power BI dashboard
+Load separate customer and product source files
+Expand the dataset for deeper trend analysis
+Add retention/cohort analysis
+Automate ingestion and transformation steps
 👤 Author
 
 Emilio Markus
-Aspiring Data Analyst | SQL | Business Analytics
+Data Analyst | SQL | E-commerce & Business Insights
