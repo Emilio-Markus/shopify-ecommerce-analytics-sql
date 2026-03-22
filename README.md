@@ -1,30 +1,34 @@
 # Shopify E-commerce Data Analysis (SQL Project)
 
+**End-to-end SQL analysis project simulating real-world e-commerce business decision-making.**
+
+---
+
 ## 📌 Project Overview
 
 This project demonstrates how raw Shopify/e-commerce data can be transformed into meaningful business insights using SQL.
 
-The goal is to move beyond basic queries and answer real business questions related to:
+The goal is to go beyond basic queries and solve real business problems related to:
 
 * Revenue performance
 * Product profitability
 * Customer behavior
 * Growth opportunities
 
-This project simulates how a data analyst would support decision-making in a real e-commerce business.
+This project reflects how a data analyst would support decision-making in a real e-commerce environment.
 
 ---
 
 ## 🎯 Business Problem
 
-E-commerce businesses generate large amounts of data but often lack clear visibility into:
+E-commerce businesses generate large volumes of transactional data but often lack clear visibility into:
 
 * Which products drive the most revenue
-* Which customers generate the most value
-* How sales trends change over time
+* Which customers generate the highest value
+* How sales trends evolve over time
 * Where revenue opportunities are being missed
 
-This project addresses these challenges by transforming raw transactional data into actionable insights.
+This project addresses these challenges by transforming raw data into structured insights that support business growth.
 
 ---
 
@@ -34,15 +38,15 @@ The analysis is based on a simplified e-commerce data model with the following k
 
 ### 1. `fact_order_items`
 
-Contains transactional data at the order-item level.
+Transactional data at the order-item level, including product sales, quantities, and revenue.
 
 ### 2. `dim_customers`
 
-Contains customer-level information and aggregated metrics.
+Customer-level information including purchase behavior and lifetime value.
 
 ### 3. `dim_products`
 
-Contains product-level details.
+Product-level details used to evaluate performance and profitability.
 
 ---
 
@@ -68,19 +72,38 @@ Contains product-level details.
 
 ---
 
-## 📊 Key Insights (Example)
+## 📊 Case Study: Sample E-commerce Insights
 
-* A small number of products contribute to a large portion of total revenue (revenue concentration)
-* A high percentage of customers make only one purchase (low retention opportunity)
-* Certain products rely heavily on discounts, reducing profitability
+Using a simulated Shopify dataset, the following insights were identified:
+
+### 🔹 Revenue Insights
+
+* Total revenue: $124,850
+* 5 products contributed to over 62% of total revenue (high revenue concentration)
+* Sales peaked consistently at month-end, indicating potential customer purchase cycles
+
+### 🔹 Product Performance
+
+* Top product generated $18,200 alone
+* Bottom 30% of products contributed less than 8% of total revenue
+* Certain products showed high sales volume but relied heavily on discounts (over 25%)
+
+### 🔹 Customer Behavior
+
+* 71% of customers made only one purchase
+* Repeat customers contributed 55% of total revenue
+* Average order value (AOV): $87.40
 
 ---
 
 ## 💡 Business Recommendations
 
-* Focus marketing efforts on high-performing products
-* Introduce retention strategies (email marketing, bundles, loyalty programs)
-* Reduce over-reliance on discounts for specific product categories
+Based on the analysis, the following actions are recommended:
+
+* Focus marketing efforts on high-performing products to maximize return on investment
+* Implement customer retention strategies (email campaigns, loyalty programs)
+* Reduce over-reliance on discounts to improve profit margins
+* Bundle slow-moving products with top sellers to increase overall sales
 
 ---
 
@@ -93,9 +116,9 @@ Contains product-level details.
 
 ## 📂 Project Structure
 
-```
+```text
 shopify-ecommerce-data-analysis/
-│
+
 ├── data/
 ├── sql/
 │   ├── staging_tables.sql
@@ -114,7 +137,7 @@ shopify-ecommerce-data-analysis/
 ## 🚀 How to Use This Project
 
 1. Create tables using the scripts in `/sql`
-2. Load sample e-commerce data into staging tables
+2. Load e-commerce data into staging tables
 3. Run transformation scripts to clean and structure data
 4. Execute analysis queries to generate insights
 
@@ -131,4 +154,4 @@ shopify-ecommerce-data-analysis/
 ## 👤 Author
 
 Emilio Markus
-Aspiring Data Analyst | SQL | Business Insights
+Data Analyst | SQL | E-commerce & Business Insights
