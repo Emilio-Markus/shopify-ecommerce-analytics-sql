@@ -64,12 +64,21 @@ Business-focused SQL queries are used to analyze:
 
 ## 📂 Project Structure
 
-- `data/sample_ecommerce_data.csv`
-- `reports/sample_output.md`
-- `sql/staging_tables.sql`
-- `sql/clean_tables.sql`
-- `sql/transformations.sql`
-- `sql/analysis_queries.sql`
+```text
+shopify-ecommerce-analytics-sql/
+│
+├── data/
+│   └── sample_ecommerce_data.csv
+│
+├── reports/
+│   └── sample_output.md
+│
+└── sql/
+    ├── staging_tables.sql
+    ├── clean_tables.sql
+    ├── transformations.sql
+    └── analysis_queries.sql
+```
 
 ⚙️ Technologies Used
 SQL Server
