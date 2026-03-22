@@ -1,157 +1,158 @@
-# Shopify E-commerce Data Analysis (SQL Project)
-
-**End-to-end SQL analysis project simulating real-world e-commerce business decision-making.**
-
----
+# 🛍️ Shopify E-commerce Data Analytics (SQL Server Project)
 
 ## 📌 Project Overview
 
-This project demonstrates how raw Shopify/e-commerce data can be transformed into meaningful business insights using SQL.
+This project demonstrates a full end-to-end data analytics pipeline using SQL Server, transforming raw e-commerce data into actionable business insights.
 
-The goal is to go beyond basic queries and solve real business problems related to:
-
-* Revenue performance
-* Product profitability
-* Customer behavior
-* Growth opportunities
-
-This project reflects how a data analyst would support decision-making in a real e-commerce environment.
+The solution follows a structured approach:
+- Data ingestion (staging tables)
+- Data transformation (fact & dimension tables)
+- Business analysis (SQL queries)
+- Insight reporting (Markdown reports)
 
 ---
 
-## 🎯 Business Problem
+## 🎯 Business Objective
 
-E-commerce businesses generate large volumes of transactional data but often lack clear visibility into:
+The goal of this project is to analyze e-commerce transaction data to uncover:
 
-* Which products drive the most revenue
-* Which customers generate the highest value
-* How sales trends evolve over time
-* Where revenue opportunities are being missed
-
-This project addresses these challenges by transforming raw data into structured insights that support business growth.
+- Revenue drivers
+- Customer purchasing behavior
+- High-performing products
+- Opportunities to increase profitability and retention
 
 ---
 
-## 🧱 Data Structure
+## 🏗️ Data Architecture
 
-The analysis is based on a simplified e-commerce data model with the following key tables:
+The project is structured into three main layers:
 
-### 1. `fact_order_items`
+### 1. Staging Layer
+- Raw data imported into flexible staging tables
+- Stored as `NVARCHAR` for easy ingestion
 
-Transactional data at the order-item level, including product sales, quantities, and revenue.
+### 2. Transformation Layer
+- Cleaned and structured into:
+  - `fact_order_items`
+  - `dim_customers`
+  - `dim_products`
 
-### 2. `dim_customers`
-
-Customer-level information including purchase behavior and lifetime value.
-
-### 3. `dim_products`
-
-Product-level details used to evaluate performance and profitability.
-
----
-
-## ⚙️ Key Analysis Performed
-
-### Revenue Analysis
-
-* Total revenue calculation
-* Monthly sales trends
-* Revenue by country
-
-### Product Performance
-
-* Top-selling products (by revenue and quantity)
-* Underperforming products
-* Discount dependency analysis
-
-### Customer Analysis
-
-* Top customers by revenue
-* Repeat vs one-time customers
-* Average order value (AOV)
-
----
-
-## 📊 Case Study: Sample E-commerce Insights
-
-Using a simulated Shopify dataset, the following insights were identified:
-
-### 🔹 Revenue Insights
-
-* Total revenue: $124,850
-* 5 products contributed to over 62% of total revenue (high revenue concentration)
-* Sales peaked consistently at month-end, indicating potential customer purchase cycles
-
-### 🔹 Product Performance
-
-* Top product generated $18,200 alone
-* Bottom 30% of products contributed less than 8% of total revenue
-* Certain products showed high sales volume but relied heavily on discounts (over 25%)
-
-### 🔹 Customer Behavior
-
-* 71% of customers made only one purchase
-* Repeat customers contributed 55% of total revenue
-* Average order value (AOV): $87.40
-
----
-
-## 💡 Business Recommendations
-
-Based on the analysis, the following actions are recommended:
-
-* Focus marketing efforts on high-performing products to maximize return on investment
-* Implement customer retention strategies (email campaigns, loyalty programs)
-* Reduce over-reliance on discounts to improve profit margins
-* Bundle slow-moving products with top sellers to increase overall sales
-
----
-
-## 🛠️ Tools Used
-
-* SQL Server (T-SQL)
-* GitHub (project documentation)
+### 3. Analytics Layer
+- SQL queries used to generate business insights
+- Metrics and performance analysis
 
 ---
 
 ## 📂 Project Structure
 
-```text
-shopify-ecommerce-data-analysis/
 
-├── data/
-├── sql/
-│   ├── staging_tables.sql
-│   ├── clean_tables.sql
-│   ├── transformations.sql
-│   ├── analysis_queries.sql
-│
-├── reports/
-│   ├── case_study.md
-│
-└── README.md
-```
+📁 sql/
+├── staging_tables.sql
+├── clean_tables.sql
+├── transformations.sql
+└── analysis_queries.sql
+
+📁 reports/
+└── sample_output.md
+
 
 ---
 
-## 🚀 How to Use This Project
+## ⚙️ Technologies Used
 
-1. Create tables using the scripts in `/sql`
-2. Load e-commerce data into staging tables
-3. Run transformation scripts to clean and structure data
-4. Execute analysis queries to generate insights
-
----
-
-## 📈 Future Improvements
-
-* Build a Power BI dashboard for visualization
-* Automate data ingestion process
-* Expand analysis to include cohort retention and customer segmentation
+- SQL Server (SSMS)
+- T-SQL
+- Data Modeling (Star Schema)
+- GitHub (Version Control)
 
 ---
 
-## 👤 Author
+## 🔄 Data Pipeline
+
+1. Load raw CSV data into staging tables
+2. Clean and structure data into fact and dimension tables
+3. Transform data into analysis-ready format
+4. Run analytical queries to generate insights
+5. Document results in reports
+
+---
+
+## 📊 Project Results
+
+### Key Metrics
+
+- **Total Revenue:** $2,090  
+- **Total Orders:** 10  
+- **Total Customers:** 7  
+- **Average Order Value (AOV):** $209  
+
+---
+
+### 📈 Revenue Trend
+
+```sql
+SELECT 
+    FORMAT(order_date, 'yyyy-MM') AS month,
+    SUM(net_sales) AS revenue
+FROM dbo.fact_order_items
+GROUP BY FORMAT(order_date, 'yyyy-MM')
+ORDER BY month;
+
+Insight:
+Revenue is concentrated in early months, indicating potential to scale growth through consistent marketing and retention strategies.
+
+🛒 Top Performing Products
+Product	Revenue
+Office Chair	$760
+Modern Lamp	$440
+Coffee Table	$300
+Rug	$270
+Wall Art	$230
+Desk Lamp	$90
+👥 Customer Segmentation
+Repeat Customers: 2
+One-Time Customers: 5
+📈 Key Takeaways
+💰 Revenue is concentrated in a small number of products
+🔁 Repeat customers contribute strong value but are limited
+🪑 Furniture is the highest-performing category
+📦 Opportunity exists to increase AOV through bundling
+🚀 Strategic Recommendations
+1. Focus on High-Revenue Products
+
+Office Chairs and Modern Lamps should be prioritized in marketing campaigns.
+
+2. Increase Customer Retention
+Implement email marketing
+Introduce loyalty programs
+3. Improve Product Bundling
+
+Bundle complementary products to increase order value.
+
+4. Optimize Pricing Strategy
+
+Test reduced discounting to improve profit margins.
+
+5. Expand Winning Categories
+
+Focus on scaling Furniture and Lighting product lines.
+
+📎 Full Report
+
+Detailed analysis available here:
+👉 /reports/sample_output.md
+
+💡 What This Project Demonstrates
+Ability to build a data pipeline from raw data to insights
+Strong SQL skills (joins, aggregations, transformations)
+Business thinking and analytical reasoning
+Ability to communicate insights clearly
+🚀 Future Improvements
+Add Power BI dashboard
+Automate data pipeline (ETL scheduling)
+Expand dataset for deeper analysis
+Introduce cohort analysis for retention
+👤 Author
 
 Emilio Markus
-Data Analyst | SQL | E-commerce & Business Insights
+Aspiring Data Analyst | SQL | Business Analytics
