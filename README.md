@@ -82,7 +82,9 @@ Total Revenue: $2,090
 Total Orders: 10
 Total Customers: 7
 Average Order Value (AOV): $209
-📈 Revenue Trend
+### 📈 Revenue Trend
+
+```sql
 SELECT 
     FORMAT(order_date, 'yyyy-MM') AS month,
     SUM(net_sales) AS total_revenue,
@@ -91,8 +93,8 @@ FROM dbo.fact_order_items
 GROUP BY FORMAT(order_date, 'yyyy-MM')
 ORDER BY month;
 Month	Revenue	Orders
-2024-01	$1,460	7
-2024-02	$630	3
+2024-01	$1,550 	7
+2024-02	$540	3
 
 Insight:
 Revenue is stronger in January than February in the sample dataset, showing the value of time-based trend analysis for identifying slowdowns and planning campaigns.
