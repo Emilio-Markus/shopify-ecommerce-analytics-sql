@@ -63,7 +63,6 @@ Business-focused SQL queries are used to analyze:
 
 ## 📂 Project Structure
 
-```text
 shopify-ecommerce-analytics-sql/
 │
 ├── data/
